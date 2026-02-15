@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>あおちゃんへ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- パスワード画面 -->
+  <div id="lock" class="lock">
+    <div class="lockCard">
+      <h2 class="lockTitle">合言葉を入力してね🐶</h2>
+      <p class="small center">ヒント：あおちゃんが好きなもの（呼び名） 
+      </p>
+
+      <div class="lockRow">
+        <input
+          id="passInput"
+          class="lockInput"
+          type="text"
+          inputmode="kana"
+          autocapitalize="off"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="合言葉（ひらがな）"
+        />
+
+        <button id="passBtn" class="btn lockBtn">開く</button>
+      </div>
+
+      <p id="passMsg" class="lockMsg"></p>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header class="card">
+      <h1>あおちゃんへ🐰</h1>
+      <p class="sub">ページ作ってみたから暇な時見てね！（笑）</p>
+    </header>
+
+    <section class="grid">
+      <!-- 記念日カウンター -->
+      <div class="card">
+        <h2>記念日カウント⌚</h2>
+        <p class="small">付き合った日（または出会った日）から</p>
+
+        <div class="counter">
+          <div class="countBox">
+            <div id="days" class="num">-</div>
+            <div class="label">Days</div>
+          </div>
+          <div class="countBox">
+            <div id="hours" class="num">-</div>
+            <div class="label">Hours</div>
+          </div>
+          <div class="countBox">
+            <div id="mins" class="num">-</div>
+            <div class="label">Mins</div>
+          </div>
+          <div class="countBox">
+            <div id="secs" class="num">-</div>
+            <div class="label">Secs</div>
+          </div>
+        </div>
+
+        <p id="since" class="small"></p>
+        <p id="remainHalf" class="small"></p>
+        <p id="remainYear" class="small"></p>
+        <p id="remainBDA" class="small"></p>
+        <p id="remainBDY" class="small"></p>
+
+      </div>
+
+      <!-- 写真スライド -->
+      <div class="card">
+        <h2>思い出スライド🧑‍🤝‍🧑</h2>
+
+        <div class="slider">
+          <img id="slide" alt="memories" />
+          <div class="sliderRow">
+            <button id="prev" class="btn sub">◀</button>
+            <div class="dots" id="dots"></div>
+            <button id="next" class="btn sub">▶</button>
+          </div>
+          <p id="caption" class="small center"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 手紙 -->
+    <section class="card letter">
+      <h2>手紙💌</h2>
+      <p id="letter" class="letterText"></p>
+      <p class="sign">— ゆうくんより</p>
+    </section>
+    
+    <footer class="small center">
+      ※このページはあおちゃんのためだけに作ったよ^ ^
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+  <canvas id="confetti"></canvas>
+</body>
+</html>
