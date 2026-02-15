@@ -9,7 +9,7 @@ const birthdayY = "2001-04-21"; // ゆうくん
 
 
 // ====== パスワードUI ======
-const correctPass = "おぱんちゅ";
+const correctPass = "CqL5U-SxPZT4";
 
 const lockEl = document.getElementById("lock");
 const passInput = document.getElementById("passInput");
@@ -364,4 +364,5 @@ heart.addEventListener("touchstart", startPress);
 heart.addEventListener("mouseup", cancelPress);
 heart.addEventListener("mouseleave", cancelPress);
 heart.addEventListener("touchend", cancelPress);
+
 
