@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>思い出</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="card">
+      <h1 id="memTitle">思い出</h1>
+      <p id="memDate" class="small"></p>
+      <a class="small" href="index.html">← もどる</a>
+    </header>
+
+    <section class="card">
+      <img id="memImg" alt="memory" style="width:100%;height:320px;object-fit:cover;border-radius:12px;background:#f2f2f2;" />
+      <p id="memText" class="letterText" style="margin-top:12px;"></p>
+    </section>
+  </main>
+
+  <script>
+    // idごとに内容を切り替える（ここを増やすだけでOK）
+    const memories = {
+      "20251020": {
+        title: "初めて会った日！",
+        date: "2025/10/20",
+        img: "photos/01.jpg",
+        text: "ここに思い出の文章を書く（例：改札で見つけた瞬間〜）"
+      },
+      "20251026": {
+        title: "お泊り！",
+        date: "2025/10/26",
+        img: "photos/02.jpg",
+        text: "ここに思い出の文章を書く"
+      },
+      "20251109": {
+        title: "つかしんでプリクラ！",
+        date: "2025/11/09",
+        img: "photos/03.jpg",
+        text: "ここに思い出の文章を書く"
+      },
+      "20251129": {
+        title: "ディズニー！",
+        date: "2025/11/29",
+        img: "photos/04.JPG",
+        text: "ここに思い出の文章を書く"
+      },
+      "20251224": {
+        title: "六本木イルミ！",
+        date: "2025/12/24",
+        img: "photos/05.jpg",
+        text: "ここに思い出の文章を書く"
+      }
+    };
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+
+    const data = memories[id];
+
+    const titleEl = document.getElementById("memTitle");
+    const dateEl = document.getElementById("memDate");
+    const imgEl = document.getElementById("memImg");
+    const textEl = document.getElementById("memText");
+
+    if(!data){
+      titleEl.textContent = "思い出が見つからなかった…";
+      dateEl.textContent = "";
+      imgEl.style.display = "none";
+      textEl.textContent = "URLが正しいか確認してね。";
+    }else{
+      titleEl.textContent = data.title;
+      dateEl.textContent = data.date;
+      imgEl.src = data.img;
+      textEl.textContent = data.text;
+    }
+  </script>
+</body>
+</html>
